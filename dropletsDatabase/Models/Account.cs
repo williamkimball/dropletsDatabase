@@ -1,10 +1,9 @@
 ﻿namespace dropletsDatabase.Models
 {
-    public class User
+    public class Account
     {
         public long Id { get; set; }
         public string Name { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public long Access_Token { get; set; }
     }
 }
