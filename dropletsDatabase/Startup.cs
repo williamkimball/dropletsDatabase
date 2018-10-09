@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using dropletsDatabase.Models;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 
 namespace dropletsDatabase
 {
@@ -27,8 +28,26 @@ namespace dropletsDatabase
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<UserContext>(opt =>
-                opt.UseInMemoryDatabase("UserList"));
+            services.AddLogging();
+            services.AddMvc();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader();
+                    });
+            });
+            var connection = @"Server=DESKTOP-Q279UK1\\SQLEXPRESS;Database=dropletsDB;Trusted_Connection=True;MultipleActiveResultSets=true";
+            services.AddDbContext<Droplets>
+                (options => options.UseSqlServer(connection));
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new CorsAuthorizationFilterFactory("AllowAll"));
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -45,6 +64,7 @@ namespace dropletsDatabase
             }
 
             //app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
             app.UseMvc();
         }
     }
