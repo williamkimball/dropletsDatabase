@@ -12224,11 +12224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\William\\Desktop\\DropletsDB\\DropletsDB\\DropletsDB.csproj",
+      "projectUniqueName": "C:\\Users\\William\\workspace\\dropletsDatabase\\DropletsDB\\DropletsDB.csproj",
       "projectName": "DropletsDB",
-      "projectPath": "C:\\Users\\William\\Desktop\\DropletsDB\\DropletsDB\\DropletsDB.csproj",
+      "projectPath": "C:\\Users\\William\\workspace\\dropletsDatabase\\DropletsDB\\DropletsDB.csproj",
       "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\William\\Desktop\\DropletsDB\\DropletsDB\\obj\\",
+      "outputPath": "C:\\Users\\William\\workspace\\dropletsDatabase\\DropletsDB\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

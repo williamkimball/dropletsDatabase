@@ -18,7 +18,7 @@ namespace DropletsDB.Models
 
         public double Price { get; set; }
 
-        public User User { get; set; }
-        public Category Category { get; set; }
+        //public virtual User User { get; set; }
+        //public virtual Category Category { get; set; }
     }
 }

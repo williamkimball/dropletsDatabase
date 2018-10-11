@@ -20,7 +20,6 @@ namespace DropletsDB.Controllers
             _context = context;
         }
 
-
         // GET: api/Accounts
         [HttpGet]
         public IEnumerable<Account> GetAccount()

@@ -9,10 +9,10 @@ namespace DropletsDB.Models
 
         public int UserId { get; set; }
 
-        public long Access_Token { get; set; }
+        public string Access_Token { get; set; }
 
-        public long ItemIdentificationNumber { get; set; }
+        public string ItemIdentificationNumber { get; set; }
 
-        public User User { get; set; }
+        //public virtual User User { get; set; }
     }
 }
