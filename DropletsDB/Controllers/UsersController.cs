@@ -24,7 +24,7 @@ namespace DropletsDB.Controllers
         [HttpGet]
         public IEnumerable<User> GetUser()
         {
-            return _context.User;
+            return _context.User.Include(user => user.Accounts).Include(user => user.BudgetItems);
         }
 
         // GET: api/Users/5

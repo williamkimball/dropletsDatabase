@@ -3,14 +3,16 @@ using DropletsDB.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DropletsDB.Migrations
 {
     [DbContext(typeof(DropletsDBContext))]
-    partial class DropletsDBContextModelSnapshot : ModelSnapshot
+    [Migration("20181013214845_virtualAcctAndCat")]
+    partial class virtualAcctAndCat
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,8 +55,6 @@ namespace DropletsDB.Migrations
 
                     b.HasKey("BudgetItemId");
 
-                    b.HasIndex("UserId");
-
                     b.ToTable("BudgetItem");
                 });
 
@@ -94,14 +94,6 @@ namespace DropletsDB.Migrations
                 {
                     b.HasOne("DropletsDB.Models.User")
                         .WithMany("Accounts")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("DropletsDB.Models.BudgetItem", b =>
-                {
-                    b.HasOne("DropletsDB.Models.User")
-                        .WithMany("BudgetItems")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
