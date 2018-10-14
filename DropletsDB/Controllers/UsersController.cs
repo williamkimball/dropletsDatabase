@@ -36,13 +36,12 @@ namespace DropletsDB.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = await _context.User.FindAsync(id);
+            var user = await _context.User.Include(use => use.Accounts).Include(use => use.BudgetItems).SingleOrDefaultAsync(i => i.UserId == id); ;
 
             if (user == null)
             {
                 return NotFound();
             }
-
             return Ok(user);
         }
 
