@@ -12,7 +12,5 @@ namespace DropletsDB.Models
         public string Access_Token { get; set; }
 
         public string ItemIdentificationNumber { get; set; }
-
-        //public virtual User User { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using DropletsDB.Models;
 
 namespace DropletsDB.Models
 {
@@ -20,5 +21,7 @@ namespace DropletsDB.Models
         public DbSet<BudgetItem> BudgetItem { get; set; }
 
         public DbSet<Category> Category { get; set; }
+
+        public DbSet<DropletsDB.Models.SavingsBucket> SavingsBucket { get; set; }
     }
 }

@@ -4,14 +4,16 @@ using DropletsDB.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DropletsDB.Migrations
 {
     [DbContext(typeof(DropletsDBContext))]
-    partial class DropletsDBContextModelSnapshot : ModelSnapshot
+    [Migration("20181025165016_addSavingsBucket")]
+    partial class addSavingsBucket
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,8 +47,6 @@ namespace DropletsDB.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CategoryId");
-
-                    b.Property<double>("Current");
 
                     b.Property<string>("Name");
 

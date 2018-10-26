@@ -15,5 +15,7 @@ namespace DropletsDB.Models
         public virtual ICollection<Account> Accounts { get; set; }
 
         public virtual ICollection<BudgetItem> BudgetItems { get; set; }
+
+        public virtual ICollection<SavingsBucket> SavingsBuckets { get; set; }
     }
 }
